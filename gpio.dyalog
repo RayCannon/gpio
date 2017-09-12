@@ -2,7 +2,7 @@
 (⎕IO ⎕ML ⎕WX)←1 1 3
 
 ∇ ns Init_PiGpio_Advanced so
-     ⍝ ADVANCED
+     ⍝ ADVANCED  functions
  ns NAgpioGetPWMrealRange so      ⍝  gpioGetPWMrealRange Get underlying PWM range for a GPIO
  ns NAgpioSetAlertFuncEx so       ⍝  gpioSetAlertFuncEx Request a GPIO change callback,extended
  ns NAgpioSetISRFunc so           ⍝  gpioSetISRFunc Request a GPIO interrupt callback
@@ -38,7 +38,7 @@
  ns NAgpioRead so               ⍝ Reads the GPIO level,on or off.
  ns NAgpioWrite so              ⍝ Sets the GPIO level,on or off.
  ns NAgpioPWM so                ⍝ Start/stop PWM pulses on a GPIO
- ns NAgpioGetPWMdutycycle so    ⍝	Get dutycycle setting on a GPIO
+ ns NAgpioGetPWMdutycycle so    ⍝    Get dutycycle setting on a GPIO
  ns NAgpioServo so              ⍝ Starts servo pulses on the GPIO,0(off),500(most anti-clockwise)to 2500(most clockwise).
  ns NAgpioGetServoPulsewidth so ⍝ gpioGetServoPulsewidth Get pulsewidth setting on a GPIO
  ns NAgpioDelay so              ⍝ Delays for at least the number of microseconds specified by micros
@@ -64,9 +64,9 @@
 
 ∇ ns Init_PiGpio_Custom so
      ⍝ These function is available for user customisation.
-     ⍝ CUSTOM	
- ns NAgpioCustom1 so ⍝gpioCustom1	User custom function 1
- ns NAgpioCustom2 so ⍝gpioCustom2	User custom function 2
+     ⍝ CUSTOM    
+ ns NAgpioCustom1 so ⍝gpioCustom1    User custom function 1
+ ns NAgpioCustom2 so ⍝gpioCustom2    User custom function 2
 ∇
 
 ∇ ns Init_PiGpio_Essential so
@@ -84,23 +84,23 @@
 ∇
 
 ∇ ns Init_PiGpio_Expert so
-     ⍝ EXPERT	
+     ⍝ EXPERT    
      ⍝ These functions are not supported yet as they are flagged as
      ⍝ "Not intended for general use"
      
-     ⍝ rawWaveAddSPI	         ⍝ This function adds a waveform representing SPI data to the existing waveform (if any).
-     ⍝ rawWaveAddGeneric	     ⍝ This function adds a number of pulses to the current waveform.
-     ⍝ rawWaveCB	             ⍝ Returns the number of the cb being currently output.
-     ⍝ rawWaveCBAdr	          ⍝ Return the (Linux) address of contol block cbNum.
-     ⍝ rawWaveGetOOL	         ⍝ Gets the OOL parameter stored at pos.
-     ⍝ rawWaveSetOOL	         ⍝ Sets the OOL parameter stored at pos to value.
-     ⍝ rawWaveGetOut	         ⍝ Gets the wave output parameter stored at pos.
-     ⍝ rawWaveSetOut	         ⍝ Sets the wave output parameter stored at pos to value.
-     ⍝ rawWaveGetIn	          ⍝ Gets the wave input value parameter stored at pos.
-     ⍝ rawWaveSetIn	          ⍝ Sets the wave input value stored at pos to value.
-     ⍝ rawWaveInfo	           ⍝ Gets details about the wave with id wave_id.
-     ⍝ rawDumpWave	           ⍝ Used to print a readable version of the current waveform to stderr.
-     ⍝ rawDumpScript	         ⍝ Used to print a readable version of a script to stderr.
+     ⍝ rawWaveAddSPI             ⍝ This function adds a waveform representing SPI data to the existing waveform (if any).
+     ⍝ rawWaveAddGeneric         ⍝ This function adds a number of pulses to the current waveform.
+     ⍝ rawWaveCB                 ⍝ Returns the number of the cb being currently output.
+     ⍝ rawWaveCBAdr              ⍝ Return the (Linux) address of contol block cbNum.
+     ⍝ rawWaveGetOOL             ⍝ Gets the OOL parameter stored at pos.
+     ⍝ rawWaveSetOOL             ⍝ Sets the OOL parameter stored at pos to value.
+     ⍝ rawWaveGetOut             ⍝ Gets the wave output parameter stored at pos.
+     ⍝ rawWaveSetOut             ⍝ Sets the wave output parameter stored at pos to value.
+     ⍝ rawWaveGetIn              ⍝ Gets the wave input value parameter stored at pos.
+     ⍝ rawWaveSetIn              ⍝ Sets the wave input value stored at pos to value.
+     ⍝ rawWaveInfo               ⍝ Gets details about the wave with id wave_id.
+     ⍝ rawDumpWave               ⍝ Used to print a readable version of the current waveform to stderr.
+     ⍝ rawDumpScript             ⍝ Used to print a readable version of a script to stderr.
 ∇
 
 ∇ ns Init_PiGpio_Files so
@@ -144,7 +144,7 @@
 ∇
 
 ∇ ns Init_PiGpio_Intermediate so
-     ⍝ INTERMEDIATE	
+     ⍝ INTERMEDIATE    
  ns NAgpioTrigger so                 ⍝ gpioTrigger Send a trigger pulse to a GPIO.
  ns NAgpioSetWatchdog so             ⍝ gpioSetWatchdog Set a watchdog on a GPIO.
  ns NAgpioSetPWMrange so             ⍝ gpioSetPWMrange Configure PWM range for a GPIO
@@ -270,7 +270,7 @@
      ⍝ Overview
  ns Init_PiGpio_Essential so     ⍝ ESSENTIAL
  ns Init_PiGpio_Beginner so      ⍝ BEGINNER
- ns Init_PiGpio_Intermediate so  ⍝ INTERMEDIATE	
+ ns Init_PiGpio_Intermediate so  ⍝ INTERMEDIATE    
  ns Init_PiGpio_Advanced so      ⍝ ADVANCED
  ns Init_PiGpio_Scripts so       ⍝ SCRIPTS
  ns Init_PiGpio_Wave so          ⍝ WAVE specific calls
@@ -933,7 +933,7 @@
 ∇
 
 ∇ ns NAgpioGetPWMdutycycle so
-     ⍝	Get dutycycle setting on a GPIO
+     ⍝    Get dutycycle setting on a GPIO
      
      ⍝ int gpioGetPWMdutycycle(unsigned user_gpio)
      ⍝ Returns the PWM dutycycle setting for the GPIO.
